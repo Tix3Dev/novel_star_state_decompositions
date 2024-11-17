@@ -1,0 +1,323 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14597,        315]
+NotebookOptionsPosition[     13875,        294]
+NotebookOutlinePosition[     14286,        310]
+CellTagsIndexPosition[     14243,        307]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Goal", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[-4.-4.j, -4.+0.j, -4.+0.j, -2.+2.j, -4.+0.j, -2.+2.j, -2.+2.j,\n    \
+    0.+2.j, -4.+0.j, -2.+2.j, -2.+2.j,  0.+2.j, -2.+2.j,  0.+2.j,\n        \
+0.+2.j,  1.+1.j, -4.+0.j, -2.+2.j, -2.+2.j,  0.+2.j, -2.+2.j,\n        \
+0.+2.j,  0.+2.j,  1.+1.j, -2.+2.j,  0.+2.j,  0.+2.j,  1.+1.j,\n        \
+0.+2.j,  1.+1.j,  1.+1.j,  1.+0.j]\>\"", ",", "\"\<PythonExpression\>\""}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M0", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n   \
+    [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M1", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[ 1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [-1.+0.j],\
+\n       [ 0.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 0.+0.j],\n\
+       [ 0.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 0.+0.j],\n  \
+     [-1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 1.+0.j],\n    \
+   [ 0.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 0.+0.j],\n      \
+ [-1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 1.+0.j],\n       \
+[-1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 1.+0.j],\n       [ \
+0.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j],\n       [ 0.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M2", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[ 1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\
+\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n\
+       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n  \
+     [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n    \
+   [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n      \
+ [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       \
+[ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ \
+0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [-1.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M3", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[ 1.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j],\n       [-1.+0.j],\
+\n       [ 1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n\
+       [ 1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n  \
+     [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 1.+0.j],\n    \
+   [ 1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n      \
+ [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 1.+0.j],\n       \
+[-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 1.+0.j],\n       \
+[-1.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j]]\>\"", 
+     ",", "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M4", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n   \
+    [1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j],\n       \
+[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j],\n       \
+[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n       \
+[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j],\n       \
+[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n       \
+[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M5", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n   \
+    [0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j],\n       \
+[0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j],\n       \
+[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n       \
+[0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j],\n       \
+[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n       \
+[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n       \
+[0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"m0", "*", "M0"}], "+", 
+     RowBox[{"m1", "*", "M1"}], "+", 
+     RowBox[{"m2", "*", "M2"}], "+", 
+     RowBox[{"m3", "*", "M3"}], "+", 
+     RowBox[{"m4", "*", "M4"}], "+", 
+     RowBox[{"m5", "*", "M5"}]}], "==", "Goal"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m0", ",", "m1", ",", "m2", ",", "m3", ",", "m4", ",", "m5"}], 
+    "}"}]}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.9368871067492065`*^9, 3.936887106750206*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"4f2c4f13-0c15-9345-b6ea-d7f360711f50"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"m0", "\[Rule]", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "-", 
+      RowBox[{"5.`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m1", "\[Rule]", 
+     RowBox[{"3.5`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.5`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m2", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "5.`"}], "+", 
+      RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m3", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "2.`"}], "-", 
+      RowBox[{"1.`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m4", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "3.5`"}], "+", 
+      RowBox[{"0.5`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m5", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "0.5`"}], "+", 
+      RowBox[{"1.5`", " ", "\[ImaginaryI]"}]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.9368871110555763`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"76cf0b9c-6e30-b544-9ed1-b6ee4cdc495f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Goal", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[-4.+4.j, -4.+0.j, -4.+0.j, -2.-2.j, -4.+0.j, -2.-2.j, -2.-2.j,\n    \
+    0.-2.j, -4.+0.j, -2.-2.j, -2.-2.j,  0.-2.j, -2.-2.j,  0.-2.j,\n        \
+0.-2.j,  1.-1.j, -4.+0.j, -2.-2.j, -2.-2.j,  0.-2.j, -2.-2.j,\n        \
+0.-2.j,  0.-2.j,  1.-1.j, -2.-2.j,  0.-2.j,  0.-2.j,  1.-1.j,\n        \
+0.-2.j,  1.-1.j,  1.-1.j,  1.+0.j]\>\"", ",", "\"\<PythonExpression\>\""}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M0", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n   \
+    [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [0.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M1", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[ 1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [-1.+0.j],\
+\n       [ 0.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 0.+0.j],\n\
+       [ 0.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 0.+0.j],\n  \
+     [-1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 1.+0.j],\n    \
+   [ 0.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 0.+0.j],\n      \
+ [-1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 1.+0.j],\n       \
+[-1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 1.+0.j],\n       [ \
+0.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j],\n       [ 0.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M2", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[ 1.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\
+\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n\
+       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n  \
+     [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n    \
+   [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n      \
+ [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       \
+[ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [ \
+0.+0.j],\n       [ 0.+0.j],\n       [ 0.+0.j],\n       [-1.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M3", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[ 1.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j],\n       [-1.+0.j],\
+\n       [ 1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n\
+       [ 1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n  \
+     [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 1.+0.j],\n    \
+   [ 1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n      \
+ [-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 1.+0.j],\n       \
+[-1.+0.j],\n       [-1.+0.j],\n       [-1.+0.j],\n       [ 1.+0.j],\n       \
+[-1.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j],\n       [ 1.+0.j]]\>\"", 
+     ",", "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M4", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n   \
+    [1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j],\n       \
+[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j],\n       \
+[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n       \
+[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j],\n       \
+[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n       \
+[0.+0.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.+0.j],\n       \
+[1.+0.j],\n       [0.+0.j],\n       [0.+0.j],\n       [1.+0.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"M5", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<[[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n   \
+    [0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j],\n       \
+[0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j],\n       \
+[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n       \
+[0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j],\n       \
+[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n       \
+[1.+0.j],\n       [0.-1.j],\n       [0.-1.j],\n       [1.+0.j],\n       \
+[0.-1.j],\n       [1.+0.j],\n       [1.+0.j],\n       [0.-1.j]]\>\"", ",", 
+     "\"\<PythonExpression\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"m0", "*", "M0"}], "+", 
+     RowBox[{"m1", "*", "M1"}], "+", 
+     RowBox[{"m2", "*", "M2"}], "+", 
+     RowBox[{"m3", "*", "M3"}], "+", 
+     RowBox[{"m4", "*", "M4"}], "+", 
+     RowBox[{"m5", "*", "M5"}]}], "==", "Goal"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m0", ",", "m1", ",", "m2", ",", "m3", ",", "m4", ",", "m5"}], 
+    "}"}]}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.936888202983343*^9, 3.9368882029843407`*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"fd3aaef1-0bbc-b34a-bd16-0c3a8ae34bff"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"m0", "\[Rule]", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "+", 
+      RowBox[{"5.`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m1", "\[Rule]", 
+     RowBox[{"3.5`", "\[VeryThinSpace]", "-", 
+      RowBox[{"0.5`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m2", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "5.`"}], "+", 
+      RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m3", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "2.`"}], "+", 
+      RowBox[{"1.`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m4", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "0.5`"}], "-", 
+      RowBox[{"1.5`", " ", "\[ImaginaryI]"}]}]}], ",", 
+    RowBox[{"m5", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "0.5`"}], "-", 
+      RowBox[{"1.5`", " ", "\[ImaginaryI]"}]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.93688820709169*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"b3211581-3422-9547-9d7d-7e1fb3b85b32"]
+}, Open  ]]
+},
+WindowSize->{1440, 747.75},
+WindowMargins->{{1434, Automatic}, {Automatic, -5.25}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a3cdaa96-e020-fd4e-b4bb-0359219813e8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5619, 103, 3796, "Input",ExpressionUUID->"4f2c4f13-0c15-9345-b6ea-d7f360711f50"],
+Cell[6202, 127, 1000, 27, 79, "Output",ExpressionUUID->"76cf0b9c-6e30-b544-9ed1-b6ee4cdc495f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7239, 159, 5620, 103, 3796, "Input",ExpressionUUID->"fd3aaef1-0bbc-b34a-bd16-0c3a8ae34bff"],
+Cell[12862, 264, 997, 27, 79, "Output",ExpressionUUID->"b3211581-3422-9547-9d7d-7e1fb3b85b32"]
+}, Open  ]]
+}
+]
+*)
+
